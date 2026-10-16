@@ -18,14 +18,18 @@ is the one exception, and it writes only the file it was told to write.
 > at 2026-10-16 14:37 UTC, and they are the only members by which that tree differs
 > from this one. Nothing is published to npm. The CI workflow has never run.
 >
-> **Superseded 2026-10-17:** the GitHub release for `v0.1.0` now exists -- created
-> through the channel above (`--publish-followup`, which refuses to touch a remote
-> with no refs, so it is the mirror of the first publication), and read back from the
-> API the same day: release `v0.1.0` present, its commit and tag's tagger both
-> `barry31-dev/agent-trace-doctor`, and the follow-up commit carrying this paragraph on top of that root.
-> The repository therefore matches what this paragraph claims, and the Markdown the
-> repository carried at 2026-10-16 14:37 UTC no longer differs from this tree except
-> in these dated corrections. Nothing is published to npm. **The CI workflow still has
+> **Superseded 2026-10-17:** the release exists -- created through the channel
+> above (`--publish-followup`, which refuses to touch a remote with no refs, so it is
+> the mirror of the first publication), and read back from the API the same day. What
+> that read measured: the release is on tag **`v0.1.1`** (there is still no release for
+> `v0.1.0`), it is neither a draft nor a prerelease, the tag object
+> `549f117a0e5cd01406490ab3933c5a86d9842fd9` has tagger
+> `barry31-dev <329888575+barry31-dev@users.noreply.github.com>`, the follow-up commit
+> `f4d73c2266c16629c1b52fba58a5517f6f109eb6` carries this paragraph on top of the root
+> commit, and its author, committer, `author.login` and `committer.login` are all
+> `barry31-dev`. The repository therefore matches what this paragraph claims, and the
+> Markdown the repository carried at 2026-10-16 14:37 UTC no longer differs from this
+> tree except in these dated corrections. Nothing is published to npm. **The CI workflow still has
 > never run, and by the maintainer's decision it will not**: GitHub Actions here is
 > behind an account-side billing gate that the project does not intend to clear, so
 > the "continuous integration" row below describes steps that were written and

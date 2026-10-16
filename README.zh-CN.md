@@ -17,7 +17,11 @@
 > **2026-10-17 更正**：`v0.1.0` 的 GitHub Release 现在存在 —— 经上面那条通道建成
 > （`--publish-followup`，它拒绝在没有 ref 的远端上动作，所以它与首次发布正好互为镜像），
 > 同日用 API 回读：release `v0.1.0` 在，它的 commit 与 tag 的 tagger 都是
-> `barry31-dev/agent-trace-doctor`，携带本段的后续提交就落在那条根提交之上。于是本仓库与本段声明相符，
+> release 落在 tag `v0.1.1` 上（`v0.1.0` 仍无 release），既非 draft 也非
+> prerelease；tag 对象 `549f117a` 的 tagger 是
+> `barry31-dev <329888575+barry31-dev@users.noreply.github.com>`；后续提交 `f4d73c22`
+> 的 author、committer、`author.login`、`committer.login` 全为 `barry31-dev`；
+> 携带本段的后续提交就落在那条根提交之上。于是本仓库与本段声明相符，
 > 而 2026-10-16 14:37 UTC 推上去的那几份 Markdown 与本树之间，除这些带日期的更正外
 > 已无差异。本包不发布到 npm。**CI workflow 仍然一次都没跑过，而且按维护者的决定不会跑**：
 > 这里的 GitHub Actions 卡在账户侧的计费门上，本项目不打算去清掉它，所以下面

@@ -16,7 +16,11 @@
 > **Superseded 2026-10-17:** the release for `v0.1.0` now exists. It was created
 > through the same channel this paragraph describes, in its follow-up mode, and
 > read back from the API on the same day: the release is present, the commit's
-> author and committer and the tag's tagger are all `barry31-dev/agent-trace-doctor`, and the
+> the release is on tag `v0.1.1` (there is still no release for `v0.1.0`), neither draft
+> nor prerelease, the tag object `549f117a` has tagger
+> `barry31-dev <329888575+barry31-dev@users.noreply.github.com>`, and the follow-up
+> commit `f4d73c22` has author, committer, `author.login` and `committer.login` all
+> `barry31-dev`, and the
 > follow-up commit that carries this correction sits on top of that root commit.
 > The CI workflow has still never run and by the maintainer's decision will not --
 > GitHub Actions here sits behind an account-side billing gate this project does

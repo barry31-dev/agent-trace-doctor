@@ -15,7 +15,10 @@ described them as open were corrected rather than left to contradict the manifes
 > **Superseded 2026-10-17:** the release for `v0.1.0` now exists -- created on
 > that day through the publication channel's follow-up mode and read back from
 > the API: release present, commit author/committer and tag tagger all
-> `barry31-dev/agent-trace-doctor`, follow-up commit on top of the published root. The CI workflow
+> release on tag `v0.1.1` (still none for `v0.1.0`), the tag object `549f117a`'s
+> tagger and the follow-up commit `f4d73c22`'s author, committer and logins all
+> `barry31-dev <329888575+barry31-dev@users.noreply.github.com>`, follow-up commit on
+> top of the published root. The CI workflow
 > has never run and will not by the maintainer's decision, because GitHub
 > Actions here is behind an account-side billing gate this project does not
 > intend to clear.
