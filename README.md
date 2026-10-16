@@ -4,8 +4,34 @@ A command-line tool for inspecting, validating and comparing agent run traces. E
 command reads a trace and prints a report and changes nothing on disk; `eval-gen --out`
 is the one exception, and it writes only the file it was told to write.
 
-> **Status: v0.1.0, released 2026-10-16 (slices S0-S24) at**
+> **Status: v0.1.0 (slices S0-S24) at**
 > https://github.com/barry31-dev/agent-trace-doctor.
+> **Measured 2026-10-17, read-only (`gh api` and `git ls-remote`)**: that repository
+> is public and no longer empty. Its `main` is a single root commit,
+> `8848261132aa56d9724f52e287de1fba06a6fb8c`, and the annotated tag `v0.1.0` (tag
+> object `d46ce35c`) points at it, so the tag exists. The GitHub release for that tag
+> does not: the same read reports zero releases. The channel that would cut it is
+> implemented and rehearsed with every gate run before any remote is contacted, and it
+> refuses to act on a remote that already has refs -- which is why that step is still
+> open rather than already taken. The Markdown files the repository carries now are
+> the wording this paragraph replaces: they were already false when they were pushed
+> at 2026-10-16 14:37 UTC, and they are the only members by which that tree differs
+> from this one. Nothing is published to npm. The CI workflow has never run.
+>
+> **Superseded 2026-10-17:** the GitHub release for `v0.1.0` now exists -- created
+> through the channel above (`--publish-followup`, which refuses to touch a remote
+> with no refs, so it is the mirror of the first publication), and read back from the
+> API the same day: release `v0.1.0` present, its commit and tag's tagger both
+> `barry31-dev/agent-trace-doctor`, and the follow-up commit carrying this paragraph on top of that root.
+> The repository therefore matches what this paragraph claims, and the Markdown the
+> repository carried at 2026-10-16 14:37 UTC no longer differs from this tree except
+> in these dated corrections. Nothing is published to npm. **The CI workflow still has
+> never run, and by the maintainer's decision it will not**: GitHub Actions here is
+> behind an account-side billing gate that the project does not intend to clear, so
+> the "continuous integration" row below describes steps that were written and
+> reviewed and then deliberately left unexecuted, not steps that pass. What was
+> measured without a runner is stated where it was measured; nothing in this file
+> should be read as a runner having executed it.
 > `validate`, `summary`, `timeline`, `show`, `tools`, `errors`, `diff`, `compare`,
 > `explain`, `eval-gen` and `fix-suggest` work and are covered by tests, and `compare`,
 > `explain`, `eval-gen` and `fix-suggest` all take `--model`. Everything marked "planned"
@@ -1567,6 +1593,13 @@ live, and its first execution is still pending. Nothing has executed it, so what
 establishes is that the steps were written and reviewed, not that they pass. The
 account's GitHub Actions was unavailable when this repository was published, so the
 first run is a pending item rather than a scheduled one.
+**It will stay that way by decision, not by oversight (2026-10-17).** The blocker is
+account-side billing for GitHub Actions, and the maintainer decided not to clear it:
+the paid CI gate is not worth what it would cost for this project, so this workflow is
+kept in the tree as a written, reviewed, deliberately unexecuted record of the steps.
+Read every sentence above as "written and reviewed", never as "passed". Anyone who
+wants the runner's verdict can run the same six steps locally -- the exact commands are
+in the workflow -- and the versions measured locally are the ones listed below.
 
 What has been measured without a runner: this tree ran green on Node 20.14.0 and Node
 22.23.3 -- `npm ci`, `typecheck`, the full suite (624 tests in 23 files on each leg) and

@@ -1,11 +1,27 @@
 # Release notes
 
-> **v0.1.0 was released on 2026-10-16** as a public repository, an
-> annotated tag and a GitHub release at
-> https://github.com/barry31-dev/agent-trace-doctor. `CHANGELOG.md`
-> records what was built, slice by slice; this file records what a
-> reader of that release is entitled to rely on, which is a different
-> claim.
+> **v0.1.0 is published to a public repository at**
+> https://github.com/barry31-dev/agent-trace-doctor. That repository was
+> created public on 2026-10-16, and measured read-only on 2026-10-17 it is no
+> longer empty: its `main` is one root commit,
+> `8848261132aa56d9724f52e287de1fba06a6fb8c`, and the annotated tag `v0.1.0`
+> points at it. The GitHub release for that tag does not exist -- the same
+> read reports zero releases -- and the channel that pushes the tree, cuts
+> the tag and creates the release is implemented and rehearsed end to end
+> while refusing to act on a remote that already has refs, which is why
+> that one step is still open. `CHANGELOG.md` records what was built,
+> slice by slice; this file records what a reader of that release will be
+> entitled to rely on, which is a different claim.
+>
+> **Superseded 2026-10-17:** the release for `v0.1.0` now exists. It was created
+> through the same channel this paragraph describes, in its follow-up mode, and
+> read back from the API on the same day: the release is present, the commit's
+> author and committer and the tag's tagger are all `barry31-dev/agent-trace-doctor`, and the
+> follow-up commit that carries this correction sits on top of that root commit.
+> The CI workflow has still never run and by the maintainer's decision will not --
+> GitHub Actions here sits behind an account-side billing gate this project does
+> not intend to clear -- so no line in these notes should be read as a runner
+> having executed the workflow.
 >
 > The package is not published to npm, and this version is not planned to
 > be. What "open source" means here is the GitHub release named above; an
@@ -88,6 +104,13 @@ Run results, with the interpreter and the date, not estimates.
   GitHub reads workflows only from the root of the repository it builds;
   its first execution here is still pending, and the account's GitHub
   Actions was unavailable when this repository was published.
+  **Superseded 2026-10-17: it will not run, by decision.** The blocker is
+  account-side billing for GitHub Actions, and the maintainer chose not to
+  clear it -- for this project the paid gate costs more than what it would
+  prove. The workflow stays in the tree as a written and reviewed record of
+  the steps, and every sentence above it should be read that way: the
+  commands were checked locally for what a runner is not needed to check,
+  and no runner has executed them.
 
 ### What has not
 
@@ -101,9 +124,11 @@ Run results, with the interpreter and the date, not estimates.
 - **No trace from a real agent run** except the mini agent spike's own;
   the three files under `examples/` are synthetic.
 - **macOS on arm64 only.** No other platform has run this.
-- **Nothing is published outside GitHub**: the public repository, the
-  `v0.1.0` tag and the GitHub release exist as of 2026-10-16; no npm
-  package does, and none is planned for this version.
+- **Nothing is published outside the GitHub repository named above**: as of
+  2026-10-17 the repository exists and carries the annotated `v0.1.0` tag,
+  while the GitHub release for that tag does not exist yet -- that is the
+  one step still open. No npm package exists either, and none is planned
+  for this version.
 
 ### Decided, and what is still open
 
@@ -120,12 +145,14 @@ rather than decorating it:
 - **`README.zh-CN.md`.** It exists and matches the English README command
   for command, exit code for exit code and boundary for boundary.
 
-One thing is still open and only the account owner can close it: **the
-continuous-integration workflow has never run.** GitHub reads workflows
-only from the root of the repository it is building, so the workflow was
-inert while this package sat inside another repository, and the account's
-Actions was unavailable when this repository was published. Its first
-execution in this repository is the open item; what has been measured
+One thing is still open and the account owner has now decided how it is
+handled: **the continuous-integration workflow has never run.** GitHub reads
+workflows only from the root of the repository it is building, so the workflow
+was inert while this package sat inside another repository, and the account's
+Actions was unavailable when the repository above was created. On 2026-10-16
+the owner decided this item is deferred and does not block publication
+("not now, later"), so it is recorded here as unmet rather than as passed. Its
+first execution in this repository is still an open item; what has been measured
 without a runner is listed above.
 
 The status of that workflow is maintained here, in the tree it describes,

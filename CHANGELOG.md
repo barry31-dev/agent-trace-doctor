@@ -3,22 +3,50 @@
 All notable changes to Agent Trace Doctor are documented in this file.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
-The project is published as a public repository at
-https://github.com/barry31-dev/agent-trace-doctor, so the `0.1.0` entry below is a
-release announcement and the `Unreleased` entry above it is a correction to that
-release rather than a next one. The command name, the license and the Chinese README
-were open when the slices below landed; they are settled now, and the entries that
+A public repository exists at https://github.com/barry31-dev/agent-trace-doctor and
+carries this tree's root commit and the annotated tag `v0.1.0` (measured read-only
+2026-10-17), while the GitHub release for that tag does not exist yet, so the `0.1.0`
+entry below is a version cut whose release is still to be cut, and the `Unreleased`
+entry above it is a correction to this release rather than a next one. The command
+name, the license and the Chinese README were
+open when the slices below landed; they are settled now, and the entries that
 described them as open were corrected rather than left to contradict the manifest.
+>
+> **Superseded 2026-10-17:** the release for `v0.1.0` now exists -- created on
+> that day through the publication channel's follow-up mode and read back from
+> the API: release present, commit author/committer and tag tagger all
+> `barry31-dev/agent-trace-doctor`, follow-up commit on top of the published root. The CI workflow
+> has never run and will not by the maintainer's decision, because GitHub
+> Actions here is behind an account-side billing gate this project does not
+> intend to clear.
 
 ## [Unreleased]
 
 ### Fixed
 
-- The statements that became false when the release happened were corrected instead of
+- The statements that described this version as unreleased were corrected instead of
   being left to contradict the tree: `README.md`, `README.zh-CN.md`, `RELEASE_NOTES.md`
   and `ASSETS.md` said no release existed and described the CI workflow as inert, while
-  the repository, the annotated tag `v0.1.0` and the GitHub release did exist. Each
+  a public repository does exist and the publication channel is implemented. Each
   corrected paragraph keeps its date, so a reader can still see what it used to say.
+- The same correction was applied in the opposite direction: several of those
+  paragraphs had claimed the tag and the release already existed. They have not --
+  the repository is empty, and the channel that will push this tree to it has only
+  been rehearsed. Both directions are now stated as measured.
+  **Superseded 2026-10-17**: "the repository is empty" was true when it was written
+  and false the same day, when the root commit and the annotated tag `v0.1.0` were
+  pushed to it at 14:37 UTC. The sentence is kept as written rather than rewritten;
+  the current reading is the next entry.
+- **Third correction, 2026-10-17, after the tree was actually pushed.** A read-only
+  measurement (`gh api` plus `git ls-remote`) reports the public repository as
+  carrying one root commit, `8848261132aa56d9724f52e287de1fba06a6fb8c`, with the
+  annotated tag `v0.1.0` pointing at it and **zero GitHub releases**. The tag exists;
+  the release does not. The paragraphs in `README.md`, `README.zh-CN.md` and
+  `RELEASE_NOTES.md` that said nothing had been pushed were corrected to that
+  reading, each keeping the date it was measured. The five Markdown files the public
+  repository carries -- which state that a release exists -- are the only members by
+  which that tree differs from this one; the other sixty-eight are byte-identical,
+  so what remains to be published is wording and not code.
 
 ### Added
 

@@ -496,13 +496,15 @@ longer list does not prove that every internal reference is gone.
 
 ## Dated corrections, 2026-10-16 (C3, the release itself)
 
-- **The release happened.** The public repository
+- **The repository exists and the channel is implemented.** The public repository
   `https://github.com/barry31-dev/agent-trace-doctor` was created empty through
-  `gh` with the publisher token at 2026-10-16 21:49 CST, and the publication
-  channel then pushed the candidate tree's root commit, the annotated tag
-  `v0.1.0` and the GitHub release. The identity gate ran on the candidate tree
-  before the push and again on the published clone after it; author, committer
-  and tagger are the publisher account named in the URL above throughout.
+  `gh` with the publisher token at 2026-10-16 21:49 CST (`gh repo view` reads
+  `private: false`, default branch `main`, `size: 0`). The publication channel
+  `publish_trace_doctor.py --publish` now performs the three remaining steps --
+  root commit, annotated tag `v0.1.0`, GitHub release -- and was rehearsed
+  end to end on this machine with the remote steps recorded instead of executed.
+  **No byte has been pushed to the public repository yet**, so this paragraph does
+  not describe a release; it describes a repository plus a rehearsed channel.
 - **Two statements in this file became false at that moment and were corrected in
   place rather than left to contradict the tree**: the CI workflow's "inert while
   this package sits inside another repository" and the "No release exists" gate.
@@ -515,6 +517,23 @@ longer list does not prove that every internal reference is gone.
   files -- `README.md`, `README.zh-CN.md`, `RELEASE_NOTES.md`, `CHANGELOG.md` and
   this manifest -- and the internal register's hash rows for those five were
   refreshed in the same pass.
+-- **Counts, re-measured for this pass** (`git ls-files` over the tree this pass
+  commits): tracked **90**, Markdown **23**, `docs/verification-*` records **17**,
+  release-tree subset **73** -- the same 73 as every pass above, because both records
+  this pass adds land inside the excluded directory. The byte-wise NUL check was
+  re-run over all 90 and still finds zero, by the same validated `wc -c` against
+  `tr -d '\000' | wc -c` method. The internal register's hash block was re-computed
+  for all 90 files and every row matched.
+- **Counts move once more, in the same round, and this paragraph is the correction.**
+  While this pass was being committed, another machine landed
+  `docs/verification-2026-10-16-s40-candidate-assembly-dry-run-m3.md` on `main`
+  (`0c6cb4e1`, the independent re-check of the S40 assembly). Merging it makes the
+  committed tree **91 tracked / 24 Markdown / 18 verification records**, still with
+  the release-tree subset at **73**. The NUL check was re-run over all 91 and still
+  finds zero; the register's hash block was re-computed for 91 rows and every row
+  matched. The two readings are recorded side by side rather than the earlier one
+  overwritten, because the 90 / 23 / 17 figure is what this pass's own additions
+  produce and the 91 / 24 / 18 figure is what a reader of the commit actually sees.
 - **What this correction does not claim**: that the workflow has run (it has not,
   and its first execution in the published repository is still pending), that any
   real provider has been called (none has), or that anything is published to npm
