@@ -1,0 +1,15 @@
+#!/usr/bin/env node
+// Entry point for the development-time mini agent spike. Requires `npm run build` first.
+// Not part of the published CLI: this is the development tool that produces a real
+// trace so the schema can be reviewed against one.
+import { EXIT_REPORT_FAILED, runSpike } from "../dist/spike/cli.js";
+
+// A closed output pipe surfaces as an async error on stdout, not as a throw, so it is
+// mapped here to the documented "report could not be delivered" code.
+process.stdout.on("error", (error) => {
+  if (error !== null && typeof error === "object" && "code" in error && error.code === "EPIPE") {
+    process.exitCode = EXIT_REPORT_FAILED;
+  }
+});
+
+process.exitCode = runSpike(process.argv.slice(2));

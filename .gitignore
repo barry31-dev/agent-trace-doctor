@@ -1,0 +1,8 @@
+# Node dependencies and build output (installed locally, never committed)
+node_modules/
+dist/
+# Compiled JS that an in-place `tsc` emit could leave beside the TS sources.
+src/**/*.js
+spike/**/*.js
+coverage/
+*.tsbuildinfo

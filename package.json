@@ -1,0 +1,33 @@
+{
+  "name": "agent-trace-doctor",
+  "version": "0.1.0",
+  "bin": {
+    "trace-doctor": "bin/trace"
+  },
+  "description": "CLI for inspecting, validating and comparing agent run traces, and for turning their failures into regression cases and directions to look. Early development: validate, summary, timeline, show, tools, errors, diff, compare, explain, eval-gen and fix-suggest, plus compare, explain, eval-gen and fix-suggest with an optional model, and a development-time mini agent spike.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "files": [
+    "dist/src",
+    "bin/trace",
+    "schemas",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "spike": "node bin/spike-run"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
+  }
+}

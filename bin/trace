@@ -1,0 +1,15 @@
+#!/usr/bin/env node
+// Entry point. Requires `npm run build` first: dist/ is generated, never committed.
+import { EXIT_REPORT_FAILED, main } from "../dist/src/cli.js";
+
+// A closed output pipe surfaces as an async error on stdout, not as a throw, so it is
+// mapped here to the documented "report could not be delivered" code.
+process.stdout.on("error", (error) => {
+  if (error !== null && typeof error === "object" && "code" in error && error.code === "EPIPE") {
+    process.exitCode = EXIT_REPORT_FAILED;
+  }
+});
+
+// `main` is async only because `explain --model` may wait on the network. Top-level
+// await is available here because this package is ESM.
+process.exitCode = await main(process.argv.slice(2));
