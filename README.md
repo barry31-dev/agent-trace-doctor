@@ -1,5 +1,10 @@
 # Agent Trace Doctor
 
+> **Feature freeze (2026-10-17).** v0.1 is feature-complete and maintenance-only.
+> New requirements go to the v0.2 backlog. On v0.1 only three kinds of change land:
+> documentation corrections, security and privacy / legal fixes, and fixes to the
+> publisher-identity gate.
+
 A command-line tool for inspecting, validating and comparing agent run traces. Every
 command reads a trace and prints a report and changes nothing on disk; `eval-gen --out`
 is the one exception, and it writes only the file it was told to write.
